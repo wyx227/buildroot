@@ -46,3 +46,5 @@ genimage \
 	--inputpath "${BINARIES_DIR}"  \
 	--outputpath "${BINARIES_DIR}" \
 	--config "${GENIMAGE_CFG}"
+
+#qemu-img convert -f raw -O qcow2 ${BUILD_DIR}/../images/disk.img disk.qcow2
