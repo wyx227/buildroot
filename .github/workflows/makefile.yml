@@ -1,0 +1,27 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "testing" ]
+  pull_request:
+    branches: [ "testing" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+
+    - name: Install dependencies
+      run: sudo apt install build-essential flex bc libelf-dev gawk m4 unzip rsync tar
+
+    - name: Select config
+      run: make pc_x86_64_bios_defconfig
+
+    - name: Run build
+      run: make 
+
+
