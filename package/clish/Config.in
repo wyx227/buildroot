@@ -1,0 +1,5 @@
+config BR2_PACKAGE_CLISH
+	bool "clish"
+	depends on BR2_PACKAGE_BUSYBOX_SHOW_OTHERS
+	help
+	  clish provides a simple shell
